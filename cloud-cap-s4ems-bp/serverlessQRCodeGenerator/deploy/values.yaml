@@ -1,0 +1,33 @@
+service-values:
+  em-srv:
+    type: x
+    instance: y
+    key: z
+  destination-srv:
+    type: x
+    instance: y
+    key: z
+secret-values:
+  destination-name:
+    name:
+      name: xxx
+      attachmentSrvApi: yyy
+      businessPartnerSrvApi: zzz
+      businessObjectTypeName: xxx
+config-values:
+  amqp-service-config:
+    amqp:
+      incoming:
+        inp1:
+          sourceAddress: xxx
+          sndSettleMode: 0
+          rcvSettleMode: 0
+          maxLinkCredit: 50
+    bind:
+      rules:
+        - filter:
+            incoming: inp1
+          action:
+            function: qrcodegenerator
+            failure: accept
+            content: application/json
